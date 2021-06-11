@@ -1,59 +1,119 @@
-  // Editor configuration.
-    this.Editor.defaultConfig = {
-      highlight: {
-        options: [
-            {
-                model: 'greenMarker',
-                class: 'marker-green',
-                title: 'Green marker',
-                color: 'var(--ck-highlight-marker-green)',
-                type: 'marker'
+this.Editor.defaultConfig = {
+          highlight: {
+            options: [
+                {
+                    model: 'greenMarker',
+                    class: 'marker-green',
+                    title: 'Green marker',
+                    color: 'var(--ck-highlight-marker-green)',
+                    type: 'marker'
+                },
+                {
+                  model: 'pinkMarker',
+                  class: 'marker-pink',
+                  title: 'Pink Marker',
+                  color: 'var(--ck-highlight-marker-pink)',
+                  type: 'marker'
+                },
+                {
+                  model: 'blueMarker',
+                  class: 'marker-blue',
+                  title: 'Blue Marker',
+                  color: 'var(--ck-highlight-marker-blue)',
+                  type: 'marker'
+                },          
+              ]
             },
-            {
-                model: 'redPen',
-                class: 'pen-red',
-                title: 'Red pen',
-                color: 'var(--ck-highlight-pen-red)',
-            }
-          ]
+            fontFamily: {
+              options: [
+                'default',
+                'Ubuntu',
+                'Arial','sans-serif',
+              'Ubuntu Mono',
+              ' Courier New',
+              'Courier',
+                'monospace'
+            ]
+          },
+          fontSize: {
+            options: [
+              'default',
+              'tiny',
+              'small',
+              'big',
+              'huge'
+            ]        
         },
-    toolbar: {
-      items: [
-      'heading',
-      '|',
-      'bold',
-      'italic',
-      'link',
-			'bulletedList',
-			'numberedList',
-			'|',
-			'indent',
-			'outdent',
-			'|',
-			'imageUpload',
-			'blockQuote',
-			'insertTable',
-			'mediaEmbed',
-			'undo',
-			'redo',
-      'highlight'
-		]
-	},
-	image: {
-		toolbar: [
-			'imageStyle:full',
-			'imageStyle:side',
-			'|',
-			'imageTextAlternative'
-		]
-	},
-	table: {
-		contentToolbar: [
-			'tableColumn',
-			'tableRow',
-			'mergeTableCells'
-		]
-	},
-	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
-};
+        fontColor: {
+          // Display 6 columns in the color grid.
+          columns: 6,
+    
+          // And 12 document colors (2 rows of them).
+          documentColors: 12,
+    
+          // ...
+      },
+      fontBackgroundColor: {
+          // Remove the "Document colors" section.
+          documentColors: 0,
+    
+          // ...
+      }, 
+        toolbar: {
+          items: [
+          'heading',
+          '|',
+          'fontFamily',
+          'fontSize',
+          'fontBackgroundColor',
+          'fontColor',
+          'bold',
+          'italic',
+          'underline',
+          'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify',
+          'strikethrough',
+          'code','subscript', 'superscript',
+          'specialCharacters',
+          'insertTable',
+          'bulletedList',
+          'numberedList',
+          'todoList',
+          'codeBlock',
+          'highlight',
+          'pageBreak',
+          '|',
+          'indent',
+          'outdent',
+          '|',      
+          'blockQuote',
+          'imageUpload', 
+          'link',     
+          'mediaEmbed',
+          'undo',
+          'redo',
+        ]
+      },
+      image: {
+        toolbar: [
+          'imageStyle:full',
+          'imageStyle:side',
+          '|',
+          'imageTextAlternative'
+        ]
+      },
+      table: {
+        contentToolbar: [
+          'tableColumn',
+          'tableRow',
+          'mergeTableCells'
+        ]
+      },      
+      // This value must be kept in sync with the language defined in webpack.config.js.
+      language: 'en',
+      wordCount: {
+        onUpdate: function( stats:any ) {
+          console.log("words-->>",stats.words) ;
+          console.log("character-->>", stats.characters );
+        }
+      }
+    };
