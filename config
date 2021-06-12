@@ -1,4 +1,5 @@
-this.Editor.defaultConfig = {
+  // Editor configuration.
+      this.Editor.defaultConfig = {
           highlight: {
             options: [
                 {
@@ -38,10 +39,12 @@ this.Editor.defaultConfig = {
           fontSize: {
             options: [
               'default',
-              'tiny',
-              'small',
-              'big',
-              'huge'
+              9,
+              11,
+              13,
+              17,
+              19,
+              21
             ]        
         },
         fontColor: {
@@ -54,11 +57,14 @@ this.Editor.defaultConfig = {
           // ...
       },
       fontBackgroundColor: {
-          // Remove the "Document colors" section.
-          documentColors: 0,
-    
-          // ...
+        columns: 6,
+	      documentColors: 12
       }, 
+      alignment: {
+        options: [
+          'left', 'right', 'center', 'justify',
+        ]        
+    },
         toolbar: {
           items: [
           'heading',
@@ -67,28 +73,33 @@ this.Editor.defaultConfig = {
           'fontSize',
           'fontBackgroundColor',
           'fontColor',
-          'bold',
-          'italic',
-          'underline',
-          'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify',
-          'strikethrough',
-          'code','subscript', 'superscript',
-          'specialCharacters',
-          'insertTable',
+          '|',
           'bulletedList',
           'numberedList',
           'todoList',
-          'codeBlock',
-          'highlight',
-          'pageBreak',
+          '|',
           '|',
           'indent',
           'outdent',
-          '|',      
-          'blockQuote',
+          '|',  
+          'alignment',
+          '|',  
+          'bold',
+          'italic',
+          'underline',
+          'strikethrough',
+          'code','subscript', 'superscript',
+          'specialCharacters',
+          '|',  
           'imageUpload', 
           'link',     
           'mediaEmbed',
+          '|', 
+          'insertTable',
+          'codeBlock',
+          'highlight',
+          'pageBreak',    
+          'blockQuote',
           'undo',
           'redo',
         ]
